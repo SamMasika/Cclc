@@ -16,7 +16,7 @@
     <link rel="shortcut icon" href="{{asset('master/assets/images/logos/cclc.png')}}" type="image/x-icon">
     <!--====== Google Fonts ======-->
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&amp;family=Oswald:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
-
+    <link href="{{asset('master/assets/libs/sweetalert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css" />
     <!--====== Font Awesome ======-->
     <link rel="stylesheet" href="{{asset('master/assets/css/font-awesome-5.9.0.css')}}">
     <!--====== Bootstrap ======-->
@@ -100,7 +100,9 @@
                                         <li><a href="#team">team</a></li>
                                         <li><a href="#contact">contact</a></li>
                                     </ul>
+                                    <li><a href="{{url('login')}}" style="color: white;" >Login</a></li>
                                 </div>
+                              
 
                             </nav>
                             <!-- Main Menu End-->
@@ -212,76 +214,22 @@
                     </div>
                 </div>
                 <div class="row align-items-center" >
+                    @foreach ($service as $serve)
+                        
                     <div class="col-xl-4 col-md-6 py-15">
                         <div class="feature-item wow fadeInUp delay-0-2s ">
                             <div class="icon">
                                 <i class="flaticon flaticon-art"></i>
                             </div>
                             <div class="feature-content">
-                                <h5>Technology Consulting</h5>
-                                <p> Our team of experts will work with you to understand your
-                                    business goals, identify areas for improvement, and recommend the best technology
-                                    solutions to help you reach your goals.</p>
-                                {{-- <a href="service-details.html" class="learn-more">Read More <i class="fas fa-arrow-right"></i></a> --}}
+                                <h5>{{$serve->name}}</h5>
+                                <p> {{$serve->description}}</p>
                             </div>
                         </div>
                     </div>
+                    @endforeach
                   
-                    <div class="col-xl-4 col-md-6">
-                        <div class="feature-item wow fadeInUp delay-0-6s">
-                            <div class="icon">
-                                <i class="flaticon flaticon-development-3"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h5>Software Development</h5>
-                                <p> From custom software development to enterprise applications,
-                                    we have the expertise to help you develop and implement the software solutions your
-                                    business needs to thrive.</p>
-                                {{-- <a href="service-details.html" class="learn-more">Read More <i class="fas fa-arrow-right"></i></a> --}}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-md-6">
-                        <div class="feature-item wow fadeInUp delay-1-0s">
-                            <div class="icon">
-                                <i class="flaticon flaticon-web-development"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h5>Cybersecurity</h5>
-                                <p> Protect your business from cyber threats with our comprehensive
-                                    cybersecurity services, including threat assessment, network security, and incident
-                                    response.</p>
-                                {{-- <a href="service-details.html" class="learn-more">Read More <i class="fas fa-arrow-right"></i></a> --}}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-md-6">
-                        <div class="feature-item wow fadeInUp delay-0-8s">
-                            <div class="icon">
-                                <i class="flaticon flaticon-analysis-1"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h5>Network Design and Implementation</h5>
-                                <p> We can help you design, implement, and maintain
-                                    a secure and efficient network infrastructure that meets your business needs.</p>
-                                {{-- <a href="service-details.html" class="learn-more">Read More <i class="fas fa-arrow-right"></i></a> --}}
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-xl-4 col-md-6">
-                        <div class="feature-item wow fadeInUp delay-0-4s">
-                            <div class="icon">
-                                <i class="flaticon flaticon-cloud-computing-1"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h5>Cloud Computing</h5>
-                                <p> Let us help you take advantage of the benefits of cloud computing,
-                                    including increased efficiency, scalability, and cost savings.</p>
-                                {{-- <a href="service-details.html" class="learn-more">Read More <i class="fas fa-arrow-right"></i></a> --}}
-                            </div>
-                        </div>
-                    </div>
+                   
                 </div>
                 <div class="feature-btn text-center mt-20">
                     {{-- <a href="services.html" class="theme-btn">view all services</a> --}}
@@ -303,162 +251,26 @@
                     </div>
                 </div>
 
+                
                 <div class="row justify-content-center logo-carousel-wrap">
+                    @foreach ($team as $item)
                     <div class="logo-item">
                    
                         <div class="team-member style-two wow fadeInUp delay-0-2s">
                             <div class="image">
-                                <img src="{{asset('master/assets/images/team/team-1.jpg')}}" alt="Team Member">
+                                <img src="{{ asset('adm/assets/images/team/' . $item->image) }}" alt="Team Member">
                             </div>
                             <div class="member-designation">
-                                <h5><a href="#team">David Kagoro</a></h5>
-                                <span>Project Director</span>
+                                <h5><a href="#team">{{$item->name}}</a></h5>
+                                <span>{{$item->title}}</span>
                             </div>
                         </div>
-                   
                     </div>
-                    <div class="logo-item">
-                      
-                            <div class="team-member style-two wow fadeInUp delay-0-2s">
-                                <div class="image">
-                                    <img src="{{asset('master/assets/images/team/team-1.jpg')}}" alt="Team Member">
-                                </div>
-                                <div class="member-designation">
-                                    <h5><a href="#team">Anzigary Millinga</a></h5>
-                                <span>Technical Director</span>
-                                </div>
-                            </div>
-                      
-                        </div>
-                        <div class="logo-item">
-                           
-                                <div class="team-member style-two wow fadeInUp delay-0-2s">
-                                    <div class="image">
-                                        <img src="{{asset('master/assets/images/team/team-1.jpg')}}" alt="Team Member">
-                                    </div>
-                                    <div class="member-designation">
-                                        <h5><a href="#team">James Madaha</a></h5>
-                                        <span>Epicor Engineer</span>
-                                    </div>
-                                </div>
-                           
-                            </div>
-                            <div class="logo-item">
-                               
-                                    <div class="team-member style-two wow fadeInUp delay-0-2s">
-                                        <div class="image">
-                                            <img src="{{asset('master/assets/images/team/team-1.jpg')}}" alt="Team Member">
-                                        </div>
-                                        <div class="member-designation">
-                                            <h5><a href="#team">Deogratias Sway</a></h5>
-                                            <span>Application Director</span>
-                                        </div>
-                                    </div>
-                               
-                                </div>
-                                <div class="logo-item">
-                                   
-                                        <div class="team-member style-two wow fadeInUp delay-0-2s">
-                                            <div class="image">
-                                                <img src="{{asset('master/assets/images/team/team-1.jpg')}}" alt="Team Member">
-                                            </div>
-                                            <div class="member-designation">
-                                                <h5><a href="#team">Deogratias Sway</a></h5>
-                                                <span>Application Director</span>
-                                            </div>
-                                        </div>
-                                  
-                                    </div>
-                                    <div class="logo-item">
-                                       
-                                            <div class="team-member style-two wow fadeInUp delay-0-2s">
-                                                <div class="image">
-                                                    <img src="{{asset('master/assets/images/team/team-1.jpg')}}" alt="Team Member">
-                                                </div>
-                                                <div class="member-designation">
-                                                    <h5><a href="#team">Deogratias Sway</a></h5>
-                                                    <span>Application Director</span>
-                                                </div>
-                                            </div>
-                                       
-                                        </div>
                     
+                    @endforeach
                 </div>
-                
-                {{-- <div class="logo-carousel-wrap style-two bg-white py-100 px-25 br-5" style="background-imge: url(master/assets/images/team/bgccl.jpg); no repeat">
-                    <div class="logo-item">
-                        <div class="team-member style-two wow fadeInUp delay-0-2s">
-                            <div class="image">
-                                <img src="{{asset('master/assets/images/team/team-1.jpg')}}" alt="Team Member">
-                            </div>
-                            <div class="member-designation">
-                                <h5><a href="#team">David Kagoro</a></h5>
-                                <span>Project Director</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="logo-item">
-                        <div class="team-member style-two wow fadeInUp delay-0-4s">
-                            <div class="image">
-                                <img src="{{asset('master/assets/images/team/team-2.jpg')}}" alt="Team Member">
-                            </div>
-                            <div class="member-designation">
-                                <h5><a href="#team">Anzigary Millinga</a></h5>
-                                <span>Technical Director</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="logo-item">
-                        <div class="team-member style-two wow fadeInUp delay-0-6s">
-                            <div class="image">
-                                <img src="{{asset('master/assets/images/team/team-3.jpg')}}" alt="Team Member">
-                            </div>
-                            <div class="member-designation">
-                                <h5><a href="#team">Deogratias Sway</a></h5>
-                                <span>Application Director</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="logo-item">
-                        <div class="team-member style-two wow fadeInUp delay-0-8s">
-                            <div class="image">
-                                <img src="{{asset('master/assets/images/team/team-4.jpg')}}" alt="Team Member">
-                            </div>
-                            <div class="member-designation">
-                                <h5><a href="#team">James
-                                    Madaha</a></h5>
-                                <span>Epicor Engineer</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="logo-item">
-                        <div class="team-member style-two wow fadeInUp delay-0-8s">
-                            <div class="image">
-                                <img src="{{asset('master/assets/images/team/team-4.jpg')}}" alt="Team Member">
-                            </div>
-                            <div class="member-designation">
-                                <h5><a href="#team">James
-                                    Madaha</a></h5>
-                                <span>Epicor Engineer</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div> --}}
-                
             </div>
         </section>
-        <!-- Team Section End -->
-
-
-        <!-- Wrok Progress Start -->
-      
-        <!-- Wrok Progress End -->
-       
-
-       
-       
-
 
         <!-- Contact Area Start -->
         <section class="contact-two" id="contact">
@@ -547,36 +359,12 @@
         <footer class="main-footer footer-two bgs-cover text-white pt-150 rpt-115" style="background-image: url(master/assets/images/footer/footer-bg-map.png);">
             <div class="container">
                 <div class="logo-carousel-wrap style-two bg-white py-130 px-25 br-5">
+                    @foreach ($partner as $item)
                     <div class="logo-item">
-                        <a href="#"><img src="{{asset('master/assets/images/client-logo/client-logo-1.png')}}" alt="Client Logo"></a>
+                        <a href="#"><img src="{{asset('adm/assets/images/partner/'.$item->logo)}}" alt="Client Logo"></a>
                     </div>
-                    <div class="logo-item">
-                        <a href="#"><img src="{{asset('master/assets/images/client-logo/client-logo-2.png')}}" alt="Client Logo"></a>
-                    </div>
-                    <div class="logo-item">
-                        <a href="#"><img src="{{asset('master/assets/images/client-logo/client-logo-3.png')}}" alt="Client Logo"></a>
-                    </div>
-                    <div class="logo-item">
-                        <a href="#"><img src="{{asset('master/assets/images/client-logo/client-logo-4.png')}}" alt="Client Logo"></a>
-                    </div>
-                    <div class="logo-item">
-                        <a href="#"><img src="{{asset('master/assets/images/client-logo/client-logo-5.png')}}" alt="Client Logo"></a>
-                    </div>
-                    <div class="logo-item">
-                        <a href="#"><img src="{{asset('master/assets/images/client-logo/client-logo-1.png')}}" alt="Client Logo"></a>
-                    </div>
-                    <div class="logo-item">
-                        <a href="#"><img src="{{asset('master/assets/images/client-logo/client-logo-2.png')}}" alt="Client Logo"></a>
-                    </div>
-                    <div class="logo-item">
-                        <a href="#"><img src="{{asset('master/assets/images/client-logo/client-logo-3.png')}}" alt="Client Logo"></a>
-                    </div>
-                    <div class="logo-item">
-                        <a href="#"><img src="{{asset('master/assets/images/client-logo/client-logo-4.png')}}" alt="Client Logo"></a>
-                    </div>
-                    <div class="logo-item">
-                        <a href="#"><img src="{{asset('master/assets/images/client-logo/client-logo-5.png')}}" alt="Client Logo"></a>
-                    </div>
+                    @endforeach
+                   
                 </div>
                 <div class="footer-widget-area pt-85 pb-30">
                     <div class="row">
@@ -597,11 +385,9 @@
                             <div class="footer-widget link-widget ml-20 rml-0">
                                 <h4 class="footer-title">Our Services</h4>
                                 <ul class="list-style-two">
-                                    <li><a href="#">Technology Consulting</a></li>
-                                    <li><a href="#">Software Development</a></li>
-                                    <li><a href="#">Network Design and Implementation</a></li>
-                                    <li><a href="#">Cloud Computing</a></li>
-                                    <li><a href="#">Cybersecurity</a></li>
+                                    @foreach ($service as $serve)
+                                    <li><a href="#">{{$serve->name}}</a></li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
@@ -643,6 +429,12 @@
     <!-- Scroll Top Button -->
     <button class="scroll-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></button>
 
+    @if(session('status'))
+    <script>
+   swal("{{session('status')}}");
+    </script>
+
+    @endif
 
     <!--====== Jquery ======-->
     <script src="{{asset('master/assets/js/jquery-3.6.0.min.js')}}"></script>
