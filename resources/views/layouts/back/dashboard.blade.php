@@ -7,6 +7,7 @@
         <div class="col-xl-12">
             <div class="row">
                 <div class="col-md-3">
+                    <a href="{{url('team-list')}}">
                     <div class="card mini-stats-wid">
                         <div class="card-body">
                             <div class="d-flex">
@@ -25,8 +26,11 @@
                             </div>
                         </div>
                     </div>
+                </a>
                 </div>
+
                 <div class="col-md-3">
+                    <a href="{{url('service-list')}}">
                     <div class="card mini-stats-wid">
                         <div class="card-body">
                             <div class="d-flex">
@@ -45,6 +49,7 @@
                             </div>
                         </div>
                     </div>
+                </a>
                 </div>
                 <div class="col-md-3">
                     <div class="card mini-stats-wid">
@@ -65,7 +70,9 @@
                         </div>
                     </div>
                 </div>
+               
                 <div class="col-md-3">
+                    <a href="{{url('partner-list')}}">
                     <div class="card mini-stats-wid">
                         <div class="card-body">
                             <div class="d-flex">
@@ -84,6 +91,7 @@
                             </div>
                         </div>
                     </div>
+                </a>
                 </div>
               
             </div>
