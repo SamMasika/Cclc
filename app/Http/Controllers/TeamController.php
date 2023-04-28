@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Team;
+use App\Models\Company;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Validator;
@@ -12,7 +13,8 @@ class TeamController extends Controller
     public function index()
     {
         $team=Team::all();
-        return view('admin.team.index',compact('team'));
+        $company=Company::where('flug',1)->first();
+        return view('admin.team.index',compact('team','company'));
     }
 
  

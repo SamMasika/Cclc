@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Company;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
@@ -10,7 +11,8 @@ class ServiceController extends Controller
     public function index()
     {
         $service=Service::all();
-        return view('admin.service.index',compact('service'));
+        $company=Company::where('flug',1)->first();
+        return view('admin.service.index',compact('service','company'));
     }
 
     public function show($id)

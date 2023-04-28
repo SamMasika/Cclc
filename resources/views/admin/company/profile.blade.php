@@ -21,7 +21,7 @@
                                                             
                                                                 <div class="logo-outer">
                                                                     <div class="logo">
-                                                                        <a href="index.html"><img src="{{asset('master/assets/images/logos/cclc.png')}}" alt="Logo" width="15%" title="Logo"></a>
+                                                                        <a href="index.html"><img src="{{asset('master/assets/images/logos/cclc.png')}}" alt="Logo" width="20%" title="Logo"></a>
                                                                     </div>
                                                                 </div>
                                                                 <h5 class="font-size-16 mb-1">{{$company->name}}</h5>
@@ -356,7 +356,7 @@
                                             <div class="image">
                                                 <div class="logo-outer">
                                                     <div class="logo">
-                                                        <a href="index.html"><img src="{{asset('adm/assets/images/company/'.$company->image)}}" alt="Logo" width="15%" title="Logo"></a>
+                                                        <a href="index.html"><img src="{{asset('adm/assets/images/company/'.$company->image)}}" alt="Logo" width="20%" title="Logo"></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -371,7 +371,7 @@
                                             <div class="image">
                                                 <div class="logo-outer">
                                                     <div class="logo">
-                                                        <a href="index.html"><img src="{{asset('adm/assets/images/company/'.$company->bg)}}" alt="Logo" width="15%" title="Logo"></a>
+                                                        <a href="index.html"><img src="{{asset('adm/assets/images/company/'.$company->bg)}}" alt="Logo" width="20%" title="Logo"></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -388,7 +388,7 @@
                                             <div class="image">
                                                 <div class="logo-outer">
                                                     <div class="logo">
-                                                        <a href="index.html"><img src="{{asset('adm/assets/images/company/'.$company->image1)}}" alt="Logo" width="15%" title="Logo"></a>
+                                                        <a href="index.html"><img src="{{asset('adm/assets/images/company/'.$company->image1)}}" alt="Logo" width="20%" title="Logo"></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -403,7 +403,7 @@
                                                     <div class="image">
                                                         <div class="logo-outer">
                                                             <div class="logo">
-                                                                <a href="index.html"><img src="{{asset('adm/assets/images/company/'.$company->image2)}}" alt="Logo" width="15%" title="Logo"></a>
+                                                                <a href="index.html"><img src="{{asset('adm/assets/images/company/'.$company->image2)}}" alt="Logo" width="20%" title="Logo"></a>
                                                             </div>
                                                         </div>
                                                     </div>

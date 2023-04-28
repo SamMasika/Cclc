@@ -124,10 +124,10 @@
             </div>
             <!--End Header Upper-->
         </header>
-        src="{{asset('adm/assets/images/company/'.$company->bg)}}"
+       
 
         <!-- Hero Section Start -->
-        <section class="hero-section-two bgs-cover overlay pt-40 rpt-80" id="home" style="background-image: url(master/assets/images/hero/consult.jpg); ">
+        <section class="hero-section-two bgs-cover overlay pt-40 rpt-80" id="home" style="background-image: url('{{ asset('adm/assets/images/company/'.$company->bg) }}');">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-md-10 col-sm-11">
@@ -143,6 +143,7 @@
                 </div>
             </div>
         </section>
+        
         <!-- Hero Section End -->
 
         <section class="about-three py-120 rpy-100" id="about"  style="background-color ">

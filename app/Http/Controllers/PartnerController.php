@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Company;
 use App\Models\Partner;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
@@ -12,7 +13,8 @@ class PartnerController extends Controller
     public function index()
     {
         $partner=Partner::all();
-        return view('admin.partner.index',compact('partner'));
+        $company=Company::where('flug',1)->first();
+        return view('admin.partner.index',compact('partner','company'));
     }
 
     public function show($id)
