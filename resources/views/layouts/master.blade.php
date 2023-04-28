@@ -98,12 +98,19 @@
                                         <li><a href="#services">services</a></li>
                                         <li><a href="#about">about</a></li>
                                         <li><a href="#team">team</a></li>
-                                        <li><a href="#contact">contact</a></li>
                                     </ul>
-                                    <li><a href="{{url('login')}}" style="color: white;" >Login</a></li>
+                                    @if(auth()->check())
+                                    <li><a href="{{url('dashboard')}}" style="color: white;">Dashboard</a></li>
+                                    <li><a href="{{url('logout')}}" style="color: white;"  onclick="event.preventDefault(); 
+                                        document.getElementById('logout-form').submit();" >Logout</a></li>
+                                        @else
+                                            <li><a href="{{url('login')}}" style="color: white;" >Login</a></li>
+                                        @endif
                                 </div>
                               
-
+                                <form id="logout-form" action="{{ url('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
                             </nav>
                             <!-- Main Menu End-->
 

@@ -44,7 +44,12 @@ class CompanyController extends Controller
         $company->mission = $request->mission;
         $company->vision = $request->vision;
         $company->update();
-        return redirect()->back()->with('status','Company updated successfully!');
+        return redirect()->back()->with([
+            'alert' => [
+                'type' => 'success',
+                'message' => 'Company Updated successfully!'
+            ]
+        ]);
     }
 
 }

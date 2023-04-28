@@ -33,7 +33,13 @@ class TeamController extends Controller
         $team->name = $request->name;
         $team->title = $request->title;
         $team->save();
-    return redirect()->back()->with('status', 'Team Member added successfully!');
+    return redirect()->back()->with([
+        'status' => 'Team Member Added successfully!',
+        'alert' => [
+            'type' => 'success',
+            'message' => 'Team Member Added successfully!'
+        ]
+    ]);
 }
 
    
@@ -55,15 +61,26 @@ class TeamController extends Controller
         $team->title = $request->title;
         $team->update();
     
-        return redirect()->back()->with('status', 'Team Member added successfully!');
+        return redirect()->back()->with([
+            'status' => 'Team Member Updated successfully!',
+            'alert' => [
+                'type' => 'success',
+                'message' => 'Team Member Updated successfully!'
+            ]
+        ]);
     }
 
     public function destroy($id)
     {
         $team=Team::find($id);
         $team->delete();
-        return redirect()->back()->with('status','Team Member deleted successfully!');
-       
+        return redirect()->back()->with([
+            'status' => 'Team Member Deleted successfully!',
+            'alert' => [
+                'type' => 'success',
+                'message' => 'Team Member Deleted successfully!'
+            ]
+        ]);
     }
 
     public function activate($id)
@@ -72,13 +89,24 @@ class TeamController extends Controller
         if($team->flug==0)
         {
             $team->flug=1;
-            $team->save();
-            return redirect()->back()->with('status','Team is Activated');  
+            $team->update();
+            return redirect()->back()->with([
+              
+                'alert' => [
+                    'type' => 'success',
+                    'message' => 'Team Member is Activated successfully!'
+                ]
+            ]);
         }elseif($team->flug==1)
         {
             $team->flug=0;
             $team->save();
-            return redirect()->back()->with('status','Team is inactive');
+            return redirect()->back()->with([
+                'alert' => [
+                    'type' => 'success',
+                    'message' => 'Team Member is Deactivated successfully!'
+                ]
+            ]);
         }
     }
 }

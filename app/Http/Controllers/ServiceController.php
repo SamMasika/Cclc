@@ -25,20 +25,35 @@ class ServiceController extends Controller
         $service->name = $request->name;
         $service->description = $request->description;
         $service->save();
-        return redirect()->back()->with('status', 'Service added successfully!');
+        return redirect()->back()->with([
+            'alert' => [
+                'type' => 'success',
+                'message' => 'Service Added successfully!'
+            ]
+        ]);
     }
    
     public function update(Request $request, $id)
     {
         $service=Service::find($id)->update($request->all());
-        return redirect()->back()->with('status','Service updated successfully!');
+        return redirect()->back()->with([
+            'alert' => [
+                'type' => 'success',
+                'message' => 'Service Updated successfully!'
+            ]
+        ]);
     }
 
     public function destroy($id)
     {
         $service=Service::find($id);
         $service->delete();
-        return redirect()->back()->with('status','Service deleted successfully!');
+        return redirect()->back()->with([
+            'alert' => [
+                'type' => 'success',
+                'message' => 'Service Deleted successfully!'
+            ]
+        ]);
        
     }
     public function activate($id)
@@ -47,13 +62,23 @@ class ServiceController extends Controller
         if($service->flug==0)
         {
             $service->flug=1;
-            $service->save();
-            return redirect()->back()->with('status','Service is Activated');  
+            $service->update();
+            return redirect()->back()->with([
+                'alert' => [
+                    'type' => 'success',
+                    'message' => 'Service Activated successfully!'
+                ]
+            ]);
         }elseif($service->flug==1)
         {
             $service->flug=0;
-            $service->save();
-            return redirect()->back()->with('status','Service is inactive');
+            $service->update();
+            return redirect()->back()->with([
+                'alert' => [
+                    'type' => 'success',
+                    'message' => 'Service Deactivated successfully!'
+                ]
+            ]);
         }
     }
 }

@@ -37,8 +37,12 @@ class PartnerController extends Controller
         }
         $partner->name = $request->name;
         $partner->save();
-    
-        return redirect()->back()->with('status', 'Partner added successfully!');
+        return redirect()->back()->with([
+            'alert' => [
+                'type' => 'success',
+                'message' => 'Partner Added successfully!'
+            ]
+        ]);
     }
    
     public function update(Request $request, $id)
@@ -56,16 +60,24 @@ class PartnerController extends Controller
         }
         $partner->name = $request->name;
         $partner->update();
-    
-        return redirect()->back()->with('status', 'Partner added successfully!');
+        return redirect()->back()->with([
+            'alert' => [
+                'type' => 'success',
+                'message' => 'Partner Updated successfully!'
+            ]
+            ]);
     }
 
     public function destroy($id)
     {
         $partner=Partner::find($id);
         $partner->delete();
-        return redirect()->back()->with('status','Partner deleted successfully!');
-       
+        return redirect()->back()->with([
+            'alert' => [
+                'type' => 'success',
+                'message' => 'Partner Deleted successfully!'
+            ]
+        ]);
     }
 
     public function activate($id)
@@ -74,13 +86,23 @@ class PartnerController extends Controller
     if($partner->flug==0)
     {
         $partner->flug=1;
-        $partner->save();
-        return redirect()->back()->with('status','Partner is Activated');  
+        $partner->update();
+        return redirect()->back()->with([
+            'alert' => [
+                'type' => 'success',
+                'message' => 'Service Activated successfully!'
+            ]
+        ]);
     }elseif($partner->flug==1)
     {
         $partner->flug=0;
-        $partner->save();
-        return redirect()->back()->with('status','Partner is inactive');
+        $partner->update();
+        return redirect()->back()->with([
+            'alert' => [
+                'type' => 'success',
+                'message' => 'Partner Deactivated successfully!'
+            ]
+        ]);
     }
 }
 }

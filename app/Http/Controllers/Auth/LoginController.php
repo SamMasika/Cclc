@@ -32,7 +32,12 @@ class LoginController extends Controller
     {
         if (Auth::user()) //1 = Admin Login
         {
-            return redirect('dashboard')->with('status','Your Welcome!! .');
+            return redirect('dashboard')->with([
+                'alert' => [
+                    'type' => 'success',
+                    'message' => 'Your Welcome!! '.Auth::user()->name
+                ]
+            ]);
         }
        
         else{
@@ -51,8 +56,12 @@ class LoginController extends Controller
     $this->guard()->logout();
 
     $request->session()->invalidate();
-
-    return redirect('/login')->with('status', 'You have been logged out!');
+    return redirect()->back()->with([
+        'alert' => [
+            'type' => 'success',
+            'message' => 'You have been logged out!'
+        ]
+    ]);
 }
     // public function __construct()
     // {

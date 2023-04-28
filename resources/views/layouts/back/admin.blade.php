@@ -18,7 +18,8 @@
         <link href="{{asset('adm/assets/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css" />
         <!-- Icons Css -->
         <link href="{{asset('adm/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
-
+        <!-- SweetAlert CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.min.css">
         <!-- DataTables -->
         <link href="{{asset('adm/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{asset('adm/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
@@ -231,14 +232,18 @@
 
         <!-- Right bar overlay-->
         <div class="rightbar-overlay"></div>
-
-        <script src="{{asset('master/assets/js/sweetalert.min.js')}}"></script>
-        @if(session('status'))
+          <!-- SweetAlert JavaScript -->
+          <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.min.js"></script>
+        @if(session('alert'))
         <script>
-        swal("{{session('status')}}");
+            Swal.fire({
+                icon: '{{ session('alert.type') }}',
+                title: '{{ session('alert.message') }}',
+                showConfirmButton: false,
+                timer: 3000
+            })
         </script>
-        @endif
-
+    @endif
         <!-- JAVASCRIPT -->
         <script src="{{asset('adm/assets/libs/jquery/jquery.min.js')}}"></script>
         <script src="{{asset('adm/assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
@@ -269,7 +274,7 @@
           <script src="{{asset('adm/assets/libs/datatables.net-buttons/js/buttons.html5.min.js')}}"></script>
           <script src="{{asset('adm/assets/libs/datatables.net-buttons/js/buttons.print.min.js')}}"></script>
           <script src="{{asset('adm/assets/libs/datatables.net-buttons/js/buttons.colVis.min.js')}}"></script>
-  
+      
           <!-- Responsive examples -->
           <script src="{{asset('adm/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
           <script src="{{asset('adm/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js')}}"></script>
