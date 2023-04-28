@@ -6,10 +6,10 @@
                         <div class="navbar-brand-box ">
                             <a href="index.html" class="logo logo-dark">
                                 <span class="logo-sm">
-                                    <img src="{{asset('master/assets/images/logos/cclc.png')}}" alt="" width="40">
+                                    <img src="{{asset('adm/assets/images/company/'.$company->image)}}" alt="" width="40">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="{{asset('master/assets/images/logos/cclc.png')}}" alt="" width="90"> <span class="logo-txt">Ccl</span>
+                                    <img src="{{asset('adm/assets/images/company/'.$company->image)}}" alt="" width="90"> <span class="logo-txt">Ccl</span>
                                 </span>
                             </a>
 

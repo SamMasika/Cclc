@@ -368,18 +368,18 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     @if ($company->bg)
-                                                    <div class="image">
-                                                        <div class="logo-outer">
-                                                            <div class="logo">
-                                                                <a href="index.html"><img src="{{asset('adm/assets/images/company/'.$company->bg)}}" alt="Logo" width="15%" title="Logo"></a>
-                                                            </div>
-                                                        </div>
+                                            <div class="image">
+                                                <div class="logo-outer">
+                                                    <div class="logo">
+                                                        <a href="index.html"><img src="{{asset('adm/assets/images/company/'.$company->bg)}}" alt="Logo" width="15%" title="Logo"></a>
                                                     </div>
-                                                    @endif
-                                                    <div class="mt-3">
-                                                        <label for="title" class="form-label">Backgroung Image</label>
-                                                        <input type="file" name="bg" id="itemname-field" class="form-control"   />
-                                                    </div>
+                                                </div>
+                                            </div>
+                                            @endif
+                                            <div class="mt-3">
+                                                <label for="title" class="form-label">Background Image</label>
+                                                <input type="file" name="bg" id="itemname-field" class="form-control"   />
+                                            </div>
                                                 </div>
                                             </div>
                                             <div class="row">                                                            
