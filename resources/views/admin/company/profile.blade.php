@@ -349,7 +349,10 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            @if ($company->image)
+                                          
+                                            <div class="row">                                                            
+                                                <div class="col-md-6">
+                                                    @if ($company->image)
                                             <div class="image">
                                                 <div class="logo-outer">
                                                     <div class="logo">
@@ -361,6 +364,55 @@
                                             <div class="mt-3">
                                                 <label for="title" class="form-label">Company's Logo</label>
                                                 <input type="file" name="image" id="itemname-field" class="form-control"   />
+                                            </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    @if ($company->bg)
+                                                    <div class="image">
+                                                        <div class="logo-outer">
+                                                            <div class="logo">
+                                                                <a href="index.html"><img src="{{asset('adm/assets/images/company/'.$company->bg)}}" alt="Logo" width="15%" title="Logo"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    @endif
+                                                    <div class="mt-3">
+                                                        <label for="title" class="form-label">Backgroung Image</label>
+                                                        <input type="file" name="bg" id="itemname-field" class="form-control"   />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">                                                            
+                                                <div class="col-md-6">
+                                                    @if ($company->image1)
+                                            <div class="image">
+                                                <div class="logo-outer">
+                                                    <div class="logo">
+                                                        <a href="index.html"><img src="{{asset('adm/assets/images/company/'.$company->image1)}}" alt="Logo" width="15%" title="Logo"></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @endif
+                                            <div class="mt-3">
+                                                <label for="title" class="form-label">Image1 About Us</label>
+                                                <input type="file" name="image1" id="itemname-field" class="form-control"   />
+                                            </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    @if ($company->image2)
+                                                    <div class="image">
+                                                        <div class="logo-outer">
+                                                            <div class="logo">
+                                                                <a href="index.html"><img src="{{asset('adm/assets/images/company/'.$company->image2)}}" alt="Logo" width="15%" title="Logo"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    @endif
+                                                    <div class="mt-3">
+                                                        <label for="title" class="form-label">Image2 About Us</label>
+                                                        <input type="file" name="image2" id="itemname-field" class="form-control"   />
+                                                    </div>
+                                                </div>
                                             </div>
                                              <div class="modal-footer">
                                                  <div class="hstack gap-2 justify-content-end">

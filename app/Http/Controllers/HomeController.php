@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Team;
+use App\Models\Company;
 use App\Models\Partner;
 use App\Models\Service;
 use Illuminate\Http\Request;
@@ -29,6 +30,7 @@ class HomeController extends Controller
         $team=Team::where('flug',1)->get();
         $service=Service::where('flug',1)->get();
         $partner=Partner::where('flug',1)->get();
-        return view('layouts.master',compact('team','service','partner'));
+        $company=Company::where('flug',1)->first();
+        return view('layouts.master',compact('team','service','partner','company'));
     }
 }

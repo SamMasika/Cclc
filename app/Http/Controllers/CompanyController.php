@@ -33,6 +33,36 @@ class CompanyController extends Controller
             $image->save($fullPath);     
             $company->image = $filename;
         }
+        if($request->hasFile('image1'))
+        {
+            $file = $request->file('image1');
+            $ext = $file->getClientOriginalExtension();
+            $filename = time().'.'.$ext;
+            $fullPath = 'adm/assets/images/company/'.$filename;
+            $image1 = Image::make($file->path())->fit(396, 446);
+            $image1->save($fullPath);     
+            $company->image1 = $filename;
+        }
+        if($request->hasFile('image2'))
+        {
+            $file = $request->file('image2');
+            $ext = $file->getClientOriginalExtension();
+            $filename = time().'.'.$ext;
+            $fullPath = 'adm/assets/images/company/'.$filename;
+            $image2 = Image::make($file->path())->fit(392, 347);
+            $image2->save($fullPath);     
+            $company->image2 = $filename;
+        }
+        if($request->hasFile('bg'))
+        {
+            $file = $request->file('bg');
+            $ext = $file->getClientOriginalExtension();
+            $filename = time().'.'.$ext;
+            $fullPath = 'adm/assets/images/company/'.$filename;
+            $bg = Image::make($file->path())->fit(5472, 3648);
+            $bg->save($fullPath);     
+            $company->bg = $filename;
+        }
         $company->name = $request->name;
         $company->email = $request->email;
         $company->phone1 = $request->phone1;

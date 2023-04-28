@@ -50,8 +50,8 @@
                     <div class="header-top">
                         <div class="top-left">
                             <ul>
-                                <li>Call Us: <a href="callto:548978478">+255-735433954, +255-756433954</a></li>
-                                <li>Email us: <a href="mailto:demo@example.com">amillinga@ccltz.co.tz</a></li>
+                                <li>Call Us: <a href="callto:548978478">{{$company->phone1}}, {{$company->phone2}}</a></li>
+                                <li>Email us: <a href="mailto:demo@example.com">{{$company->email}}</a></li>
                             </ul>
                         </div>
                         <div class="top-right">
@@ -70,7 +70,7 @@
                     <div class="header-inner d-flex align-items-center">
                         <div class="logo-outer">
                             <div class="logo">
-                                <a href="index.html"><img src="{{asset('master/assets/images/logos/cclc.png')}}" alt="Logo" width="35%" title="Logo"></a>
+                                <a href="index.html"><img src="{{asset('adm/assets/images/company/'.$company->image)}}" alt="Logo" width="35%" title="Logo"></a>
                             </div>
                         </div>
 
@@ -132,8 +132,8 @@
                 <div class="row">
                     <div class="col-lg-8 col-md-10 col-sm-11">
                         <div class="hero-content text-white py-220 rpy-120">
-                            <span class="sub-title d-block wow fadeInUp delay-0-2s">Building Africa’s Future with ICT.</span>
-                            <h1 class="wow fadeInUp delay-0-4s mt-20">CUMMULATIVE CONSULTANCY (T) LIMITED.</h1>
+                            <span class="sub-title d-block wow fadeInUp delay-0-2s">{{$company->motto}}</span>
+                            <h1 class="wow fadeInUp delay-0-4s mt-20">{{$company->name}}</h1>
                             <div class="hero-btns mt-35 wow fadeInUp delay-0-6s">
                                 {{-- <a href="contact.html" class="theme-btn mr-25">meet with us</a> --}}
                                 {{-- <a href="https://www.youtube.com/watch?v=9Y7ma241N8k" class="mfp-iframe video-play"><i class="fas fa-play"></i></a> --}}
@@ -162,11 +162,7 @@
                             {{-- <h5  class="text-primary">Our Mission</h5> --}}
                             <p>  <strong>
                              
-                                Welcome to CUMMULATIVE CONSULTANCY (T) LIMITED, a leading IT consultancy firm that
-                                provides innovative technology solutions to businesses of all sizes. With a team of highly skilled
-                                and experienced consultants, we have a proven track record of delivering results that drive
-                                growth, efficiency, and customer satisfaction.
-                              
+                          {{$company->about_us}}
                             </strong>
                                 </p>
                             {{-- <a href="service-details.html" class="learn-more">Read More <i class="fas fa-arrow-right"></i></a> --}}
@@ -179,8 +175,8 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="about-three-image rmb-60 mr-10 rmr-0 wow fadeInLeft delay-0-2s">
-                            <img src="{{asset('master/assets/images/about/about-three-1.jpg')}}" alt="About">
-                            <img src="{{asset('master/assets/images/about/about-three-2.jpg')}}" alt="About">
+                            <img src="{{asset('adm/assets/images/company/'.$company->image1)}}" alt="About">
+                            <img src="{{asset('adm/assets/images/company/'.$company->image2)}}" alt="About">
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -188,8 +184,7 @@
                             <div class="feature-item wow fadeInUp delay-0-2s">
                                 <div class="feature-content">
                                     <h5  class="text-primary">Our Mission</h5>
-                                    <p>  To empower businesses with innovative technology solutions and exceptional service, enabling
-                                        them to achieve their goals and succeed in an ever-evolving digital landscape.
+                                    <p> {{$company->mission}}
                                         </p>
                                     {{-- <a href="service-details.html" class="learn-more">Read More <i class="fas fa-arrow-right"></i></a> --}}
                                 </div>
@@ -197,8 +192,7 @@
                             <div class="feature-item wow fadeInUp delay-0-2s">
                                 <div class="feature-content">
                                     <h5  class="text-primary">Our Vision</h5>
-                                    <p >    To be the leading provider of technology services, recognized for our expertise, integrity, and
-                                        commitment to delivering exceptional outcomes for our clients.
+                                    <p >  {{$company->vision}}
                                         </p>
                                     {{-- <a href="service-details.html" class="learn-more">Read More <i class="fas fa-arrow-right"></i></a> --}}
                                 </div>
@@ -284,54 +278,6 @@
             <div class="container">
                 <div class="contact-section-inner p-50 br-5 bg-blue">
                     <div class="row">
-                        {{-- <div class="col-lg-7">
-                            <div class="contact-section-form rmb-50 wow fadeInLeft delay-0-2s">
-                                <div class="section-title mb-20">
-                                    <h2>Get In Touch</h2>
-                                </div>
-                                <form id="contact-form" class="contact-form" name="contact-form" action="#" method="post">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label for="name">Your name</label>
-                                                <input type="text" id="name" name="name" class="form-control" placeholder="Name" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label for="email">Your email address</label>
-                                                <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label for="number">Your phone number</label>
-                                                <input type="text" id="number" name="number" class="form-control" placeholder="Phone Number" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label for="service">Service Required</label>
-                                                <select id="service" name="service">
-                                                    <option value="default" selected>Service</option>
-                                                    <option value="about">About</option>
-                                                    <option value="contact">Contact</option>
-                                                    <option value="team">Team</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12">
-                                            <div class="form-group">
-                                                <textarea name="comments" id="comments" class="form-control" rows="4" placeholder="Let us know what you need." required></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12">
-                                            <button type="submit" class="theme-btn">Send Message</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div> --}}
                         <div class="col-lg-12">
                             <div class="contact-image-number style-two bgs-cover overlay wow fadeInRight delay-0-2s" style="background-image: url(master/assets/images/hero/consult.jpg);">
                                 <div class="contact-informations text-white">
@@ -341,14 +287,14 @@
                                             <i class="fas fa-phone-alt"></i>
                                             <div class="content">
                                                 <span>Call Us</span>
-                                                <h5><a href="callto:+255-0767297831">+255-735433954, +255-756433954</a></h5>
+                                                <h5><a href="callto:+255-0767297831">{{$company->phone1}}, {{$company->phone2}}</a></h5>
                                             </div>
                                         </li>
                                         <li>
                                             <i class="fas fa-envelope"></i>
                                             <div class="content">
                                                 <span>Write to Us</span>
-                                                <h5><a href="mailto:amillinga@ccltz.co.tz">amillinga@ccltz.co.tz</a></h5>
+                                                <h5><a href="mailto:{{$company->email}}">{{$company->email}}</a></h5>
                                             </div>
                                         </li>
                                     </ul>
@@ -401,15 +347,15 @@
                         <div class="col-lg-4 col-sm-6">
                             <div class="footer-widget about-widget">
                                 <div class="footer-logo ">
-                                    <a href="#"><img src="{{asset('master/assets/images/logos/cclc.png')}}" alt="Logo" width="40%"></a>
+                                    <a href="#"><img src="{{asset('adm/assets/images/company/'.$company->image)}}" alt="Logo" width="40%"></a>
                                 </div>
                                
                                 <ul class="contact-info mt-15">
                                     <li><i class="fas fa-map-marker-alt"></i>
                                       <p>
-                                        P.O.BOX 67597 ,Dar es Salaam-Tanzania <br>
-                                        Phone: <span> +255-735433954,<br> +255-756433954.</span> <br>
-                                       Email: amillinga@ccltz.co.tz</p>  
+                                        P.O.BOX {{$company->postal_address}} ,{{$company->location}} <br>
+                                        Phone: <span> {{$company->phone1}},<br> {{$company->phone2}}.</span> <br>
+                                       Email: {{$company->email}}</p>  
                                     </li>
                                 </ul>
                             </div>

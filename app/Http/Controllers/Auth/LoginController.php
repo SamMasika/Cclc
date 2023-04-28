@@ -39,10 +39,6 @@ class LoginController extends Controller
                 ]
             ]);
         }
-       
-        else{
-            return redirect('/login')->with('status','Consult the Administrator!!'); 
-        } 
     }
 
     /**

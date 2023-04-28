@@ -12,6 +12,6 @@ class Company extends Model
         'name', 'email', 'phone1',
         'phone2', 'location', 'postal_address',
         'vision', 'mission', 'about_us',
-        'motto', 'image', 
+        'motto', 'image', 'bg','image1','image2'
     ];
 }
