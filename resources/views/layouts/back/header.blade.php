@@ -61,7 +61,7 @@
                                 <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="{{url('profile-list')}}"><i class="mdi mdi-account font-size-16 align-middle me-1"></i>Company Summary</a>
+                                <a class="dropdown-item" href="{{url('profile-list')}}"><i class="mdi mdi-account font-size-16 align-middle me-1"></i>Company Details</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ url('logout') }}" onclick="event.preventDefault(); 
                                 document.getElementById('logout-form').submit();"><i class="mdi mdi-logout font-size-16 align-middle me-1"></i> Logout</a>

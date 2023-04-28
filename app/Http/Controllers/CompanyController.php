@@ -6,6 +6,7 @@ use App\Models\Team;
 use App\Models\Company;
 use App\Models\Service;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class CompanyController extends Controller
 {
@@ -18,70 +19,32 @@ class CompanyController extends Controller
        return view('admin.company.profile',compact('company','service','team'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
     public function update(Request $request, $id)
     {
-        $company=Company::find($id)->update($request->all());
+        $company = Company::find($id);
+        if($request->hasFile('image'))
+        {
+            $file = $request->file('image');
+            $ext = $file->getClientOriginalExtension();
+            $filename = time().'.'.$ext;
+            $fullPath = 'adm/assets/images/company/'.$filename;
+            $image = Image::make($file->path())->fit(512, 399);
+            $image->save($fullPath);     
+            $company->image = $filename;
+        }
+        $company->name = $request->name;
+        $company->email = $request->email;
+        $company->phone1 = $request->phone1;
+        $company->phone2 = $request->phone2;
+        $company->location = $request->location;
+        $company->postal_address = $request->postal_address;
+        $company->motto = $request->motto;
+        $company->about_us = $request->about_us;
+        $company->mission = $request->mission;
+        $company->vision = $request->vision;
+        $company->update();
         return redirect()->back()->with('status','Company updated successfully!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

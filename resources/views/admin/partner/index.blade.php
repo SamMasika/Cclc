@@ -83,20 +83,18 @@
                         <div class="col-lg-12">
                                 <label for="logo" class="form-label">Logo</label>
                                 <input type="file" id="tasksTitle-field" name="logo" class="form-control" accept="logo/*"  />
-                                <div class="text-muted">Image dimesions should be width:270px, height:280px</div>
+                                
                                 @error('logo')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
-                     
-                     
                     </div>
                     <!--end row-->
                 </div>
                 <div class="modal-footer">
                     <div class="hstack gap-2 justify-content-end">
                         <button type="button" class="btn btn-light" id="close-modal" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" id="add-btn">Add Member</button>
+                        <button type="submit" class="btn btn-primary" id="add-btn">Add Partner</button>
                         {{-- <button type="button" class="btn btn-success" id="edit-btn">Update Task</button> --}}
                     </div>
                 </div>

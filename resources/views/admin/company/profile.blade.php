@@ -252,11 +252,11 @@
                             <div class="modal-dialog modal-dialog-centered modal-lg">
                                 <div class="modal-content">
                                     <div class="modal-header bg-soft-primary">
-                                        <h5 class="modal-title" >Edit Section</h5>
+                                        <h5 class="modal-title" >Edit Company Details</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-modal"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="{{url('profile-update/'.$company->id)}}" method="POST">
+                                        <form action="{{url('profile-update/'.$company->id)}}" method="POST" enctype="multipart/form-data">
                                             @csrf      
                                             <div class="row">                                                            
                                                 <div class="col-md-6">
@@ -337,7 +337,7 @@
                                             <div class="image">
                                                 <div class="logo-outer">
                                                     <div class="logo">
-                                                        <a href="index.html"><img src="{{asset('master/assets/images/logos/cclc.png')}}" alt="Logo" width="15%" title="Logo"></a>
+                                                        <a href="index.html"><img src="{{asset('adm/assets/images/company/'.$company->image)}}" alt="Logo" width="15%" title="Logo"></a>
                                                     </div>
                                                 </div>
                                             </div>

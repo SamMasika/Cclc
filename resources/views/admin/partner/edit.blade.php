@@ -5,7 +5,7 @@
                 <h5 class="modal-title" >Edit Partner</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-modal"></button>
             </div>
-            <form action="{{url('partner-update/'.$item->id)}}" method="POST">
+            <form action="{{url('partner-update/'.$item->id)}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('put')
                 <div class="modal-body">

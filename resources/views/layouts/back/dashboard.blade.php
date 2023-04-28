@@ -54,7 +54,6 @@
                                     <p class="text-muted fw-medium">Users</p>
                                     <h4 class="mb-0">{{$user}}</h4>
                                 </div>
-
                                 <div class="flex-shrink-0 align-self-center">
                                     <div class="avatar-sm rounded-circle bg-primary mini-stat-icon">
                                         <span class="avatar-title rounded-circle bg-primary">
