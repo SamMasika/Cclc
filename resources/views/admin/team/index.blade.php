@@ -6,7 +6,7 @@
         <div class="card">
             <div class="card-header">
                 <h4 class="card-title">Team Members
-                    <a href="" class="btn btn-primary waves-effect waves-light float-end" data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal" ><i class="fas fa-plus"></i> Add Member</a>
+                    <a href="" class="btn btn-primary waves-effect waves-light float-end" data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal" ><i class="fas fa-plus"></i> New Member</a>
                 </h4>
             </div>
             <div class="card-body">
