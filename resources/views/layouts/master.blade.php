@@ -62,7 +62,7 @@
                     </div>
                 </div>
             </div>
-
+           
             <!--Header-Upper-->
             <div class="header-upper">
                 <div class="container clearfix">
@@ -70,7 +70,7 @@
                     <div class="header-inner d-flex align-items-center">
                         <div class="logo-outer">
                             <div class="logo">
-                                <a href="index.html"><img src="{{asset('adm/assets/images/company/'.$company->image)}}" alt="Logo" width="35%" title="Logo"></a>
+                                <a href="index.html"><img src="{{asset('adm/assets/images/company/'.$company->image)}}" alt="Logo" width="40%" title="Logo"></a>
                             </div>
                         </div>
 
@@ -79,10 +79,16 @@
                             <nav class="main-menu navbar-expand-lg">
                                 <div class="navbar-header">
                                     <div class="mobile-logo py-15">
-                                        <a href="index.html">
-                                            <img src="{{asset('master/assets/images/logos/logo.png')}}" alt="Logo" title="Logo">
-                                        </a>
-                                    </div>
+                                        <div class="logo">
+                                            <a href="index.html"><img src="{{asset('adm/assets/images/company/'.$company->image)}}" alt="Logo" width="60%" title="Logo"></a>
+                                        </div>
+                                    </div>     @if(auth()->check())
+                                    <li><a href="{{url('dashboard')}}" style="color: white;">Dashboard</a></li>
+                                    <li><a href="{{url('logout')}}" style="color: white;"  onclick="event.preventDefault(); 
+                                        document.getElementById('logout-form').submit();" >Logout</a></li>
+                                        @else
+                                            <li><a href="{{url('login')}}" style="color: white;" >Login</a></li>
+                                        @endif
 
                                     <!-- Toggle Button -->
                                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -95,8 +101,8 @@
                                 <div class="navbar-collapse collapse clearfix">
                                     <ul class="navigation onepage clearfix">
                                         <li><a href="#home">Home</a></li>
-                                        <li><a href="#services">services</a></li>
                                         <li><a href="#about">about</a></li>
+                                        <li><a href="#services">services</a></li>
                                         <li><a href="#team">team</a></li>
                                     </ul>
                                     @if(auth()->check())
@@ -146,7 +152,8 @@
         
         <!-- Hero Section End -->
 
-        <section class="about-three py-120 rpy-100" id="about"  style="background-color ">
+        <section class="about-three py-120 rpy-100" id="about"  >
+            {{-- style="background-image: url('{{ asset('adm/assets/images/company/'.$company->bg) }}');" --}}
             <div class="container" >
                 <div class="row justify-content-center">
                     <div class="col-lg-6 col-md-8 col-sm-10">
@@ -175,13 +182,12 @@
             </div>
                 <div class="row align-items-center">
                     <div class="col-lg-6">
-                        <div class="about-three-image rmb-60 mr-10 rmr-0 wow fadeInLeft delay-0-2s">
+                        <div class="about-three-image rmb-80 mr-10 rmr-0 wow fadeInLeft delay-0-2s">
                             <img src="{{asset('adm/assets/images/company/'.$company->image1)}}" alt="About">
                             <img src="{{asset('adm/assets/images/company/'.$company->image2)}}" alt="About">
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        
                             <div class="feature-item wow fadeInUp delay-0-2s">
                                 <div class="feature-content">
                                     <h5  class="text-primary">Our Mission</h5>
@@ -190,7 +196,7 @@
                                     {{-- <a href="service-details.html" class="learn-more">Read More <i class="fas fa-arrow-right"></i></a> --}}
                                 </div>
                             </div>
-                            <div class="feature-item wow fadeInUp delay-0-2s">
+                            <div class="feature-item wow fadeInUp delay-0-2s mt-5">
                                 <div class="feature-content">
                                     <h5  class="text-primary">Our Vision</h5>
                                     <p >  {{$company->vision}}
@@ -242,12 +248,11 @@
 
 
         <!-- Team Section Start -->
-        <section class="team-section-two bgs-cover text-white pt-115 rpt-95 pb-90 rpb-70" id="team"  style="background-image: url(master/assets/images/team/bgccl.jpg); no repeat">
+        {{-- <section class="team-section-two bgs-cover text-white pt-115 rpt-95 pb-90 rpb-70" id="team"  style="background-image: url(master/assets/images/team/bgccl.jpg); no repeat">
             <div class="container">
                 <div class="row justify-content-center ">
                     <div class="col-lg-6 col-md-8 col-sm-10">
                         <div class="section-title text-center mb-35">
-                            {{-- <span class="sub-title">WHO WE ARE</span> --}}
                             <h2 class="text-light">Our Team</h2>
                         </div>
                     </div>
@@ -272,7 +277,7 @@
                     @endforeach
                 </div>
             </div>
-        </section>
+        </section> --}}
 
         <!-- Contact Area Start -->
         <section class="contact-two" id="contact">

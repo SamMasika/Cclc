@@ -1,4 +1,3 @@
-
 <form action="{{route('activate.service',$item->id)}}"  method="post" enctype="multipart/form-data">
     @csrf
     @method('put')

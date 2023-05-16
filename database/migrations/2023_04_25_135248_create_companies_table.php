@@ -17,6 +17,7 @@ class CreateCompaniesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('motto');
+            $table->string('about_us');
             $table->string('mission');
             $table->string('vision');
             $table->string('phone1');
@@ -25,6 +26,9 @@ class CreateCompaniesTable extends Migration
             $table->string('location');
             $table->string('postal_address');
             $table->string('image')->nullable();
+            $table->string('image1')->nullable();
+            $table->string('image2')->nullable();
+            $table->string('bg')->nullable();
             $table->timestamps();
         });
     }
